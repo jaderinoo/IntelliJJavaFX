@@ -1,8 +1,13 @@
+package application;
+
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -17,23 +22,19 @@ public class FxFXMLExample1 extends Application
 	@Override
 	public void start(Stage stage) throws IOException
 	{
-
-		
-		// Create the FXMLLoader
-		FXMLLoader loader = new FXMLLoader();
-		// Path to the FXML File
-		String fxmlDocPath = "src/FxFXMLExample1.fxml";
-		FileInputStream fxmlStream = new FileInputStream(fxmlDocPath);
-
-		// Create the Pane and all Details
-		VBox root = (VBox) loader.load(fxmlStream);
+		URL url = getClass().getResource("FxFXMLExample1.fxml");
+	        if (url == null) {
+	            System.out.println("Can't load FXML file");
+	            Platform.exit();
+	        }
+	    VBox root = (VBox) FXMLLoader.load(url);
 
 		// Create the Scene
 		Scene scene = new Scene(root);
 		// Set the Scene to the Stage
 		stage.setScene(scene);
 		// Set the Title to the Stage
-		stage.setTitle("A simple FXML Example");
+		stage.setTitle("JavaFx Testing Environment");
 		// Display the Stage
 		stage.show();
 	}
