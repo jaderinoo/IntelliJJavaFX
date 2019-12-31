@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 public class FxFXMLExample1 extends Application
 {
 	public static void main(String[] args)

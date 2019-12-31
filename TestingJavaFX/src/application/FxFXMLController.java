@@ -36,7 +36,7 @@ public class FxFXMLController
 	public FxFXMLController()
 	{
 	}
-
+	
 	@FXML
 	private void initialize()
 	{
